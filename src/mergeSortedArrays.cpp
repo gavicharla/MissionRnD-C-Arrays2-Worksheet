@@ -14,13 +14,38 @@ NOTES:
 */
 
 #include <iostream>
-
+#include<stdio.h>
+#include<stdlib.h>
 struct transaction {
 	int amount;
 	char date[11];
 	char description[20];
 };
+int date_to_num2(char * s)
+{
+	int num = 0, i;
+	//converting the string date format to number making easy for comparision
+	for (i = 6; i <= 9; i++)
+	{
+		num = num * 10 + s[i] - '0';
+	}
+	num = num * 10 + s[3] - '0';
+	num = num * 10 + s[4] - '0';
 
+	num = num * 10 + s[0] - '0';
+	num = num * 10 + s[1] - '0';
+	return num;
+}
 struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct transaction *B, int BLen) {
+	if (A==NULL || B==NULL)
+	return NULL;
+	struct transaction * result = (struct transaction *)malloc(sizeof(struct transaction)* (ALen + BLen));
+	int key1, key2;
+	for (int i = ALen, j = BLen; i >= 0 && j >= 0;i--)
+	{
+		
+	}
+	
+	
 	return NULL;
 }

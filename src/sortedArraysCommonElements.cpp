@@ -53,7 +53,7 @@ struct transaction * sortedArraysCommonElements(struct transaction *A, int ALen,
 		first[i] = date_to_num1(A[i].date);
 
 	int flag = -1,key,count=0;
-	struct transaction * result = (struct transaction *)malloc(sizeof(struct transaction)*(ALen > BLen ? ALen : BLen));
+	struct transaction * result = (struct transaction *)malloc(sizeof(struct transaction)*(ALen < BLen ? ALen : BLen));
 	for (i = 0; i < BLen; i++)
 	{
 		key = date_to_num1(B[i].date);
