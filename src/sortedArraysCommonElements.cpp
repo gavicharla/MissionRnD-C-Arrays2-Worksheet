@@ -48,7 +48,7 @@ struct transaction * sortedArraysCommonElements(struct transaction *A, int ALen,
 	if (A==NULL||B==NULL)
 		return NULL;
 	int i = 0,*first;
-	first = (int *)malloc(sizeof(ALen));
+	first = (int *)malloc(sizeof(int)*ALen);
 	for (i = 0; i < ALen; i++)
 		first[i] = date_to_num1(A[i].date);
 
@@ -60,10 +60,12 @@ struct transaction * sortedArraysCommonElements(struct transaction *A, int ALen,
 		flag = searchin(first, key, ALen);
 		if (flag >= 0)
 		{
-			result[count++] = A[flag];
+			result[count] = A[flag];
+			count++;
 		}
 	}
 	if (count > 0)
 		return result;
-	return NULL;
+	else
+		return NULL;
 }
